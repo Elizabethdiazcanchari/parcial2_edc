@@ -56,4 +56,16 @@ export class CreateProgramaDto {
   })
   @MaxLength(20, { message: 'El campo estado no debe ser mayor a 20 caracteres' })
   readonly estado: string;
+
+  @ApiProperty()
+  @IsNotEmpty({ message: 'El campo modalidadClases no debe ser vacío' })
+  @IsString({ message: 'El campo modalidadClases debe ser de tipo cadena' })
+  @MaxLength(20, { message: 'El campo modalidadClases no debe ser mayor a 2000 caracteres' })
+  readonly modalidadClases: string;
+
+  @ApiProperty()
+  @IsNotEmpty({ message: 'El campo areaConocimiento no debe ser vacío' })
+  @IsString({ message: 'El campo areaConocimiento debe ser de tipo cadena' })
+  @MaxLength(40, { message: 'El campo areaConocimiento no debe ser mayor a 2000 caracteres' })
+  readonly areaConocimiento: string;
 }
